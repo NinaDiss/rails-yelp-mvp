@@ -1,3 +1,4 @@
+
 <p>
   <strong>Name:</strong>
   <%= @restaurant.name %>
@@ -19,3 +20,14 @@
     <%= @restaurant.phone_number %>
   </p>
 <% end %>
+
+<p><strong>Reviews:</strong></p>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li><%= review.content %> - <%= review.rating %>/5</li>
+  <% end %>
+</ul>
+
+<%= link_to("Poster un avis", new_restaurant_review_path(@restaurant), class: "btn btn-small btn-outline-primary") %>
+
+<%= link_to("Retour à la liste", restaurants_path, class: "btn btn-primary") %>

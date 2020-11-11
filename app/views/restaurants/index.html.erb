@@ -2,10 +2,8 @@
 
 <ul>
   <% @restaurants.each do |restaurant| %>
-    <li><%= link_to(restaurant.name, restaurant_path(restaurant)) %></li>
+    <li class="my-3"><%= link_to(restaurant.name, restaurant_path(restaurant)) %></li>
   <% end %>
 </ul>
 
 <%= link_to("Créer un resto", new_restaurant_path, class: "btn btn-primary") %>
-
-<%#= link_to("Poster un avis", new_restaurant_review_path(restaurant_id), class: "btn btn-primary") %>
